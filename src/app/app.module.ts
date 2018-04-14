@@ -53,6 +53,10 @@ import { MapaDeGoogleComponent } from './componentes/mapa-de-google/mapa-de-goog
 import { AgmCoreModule } from '@agm/core';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
+import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
+import { CuatroImagenesComponent } from './componentes/cuatro-imagenes/cuatro-imagenes.component';
+import { ImagenesService }from './servicios/imagenes.service';
+
 
 @NgModule({
   declarations: [
@@ -78,7 +82,10 @@ import { SexoPipe } from './pipes/sexo.pipe';
     MapaDeGoogleComponent,
     JugadoresListadoComponent,
     InputJugadoresComponent,
-    SexoPipe
+    SexoPipe,
+    PiedraPapelTijeraComponent,
+    CuatroImagenesComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -92,7 +99,7 @@ import { SexoPipe } from './pipes/sexo.pipe';
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService],
+  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService, ImagenesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

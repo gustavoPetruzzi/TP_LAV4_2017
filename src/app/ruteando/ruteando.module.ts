@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 // importo del module principal
 import { RouterModule, Routes } from '@angular/router';
 import { AdivinaElNumeroComponent } from '../componentes/adivina-el-numero/adivina-el-numero.component';
+import { PiedraPapelTijeraComponent }from '../componentes/piedra-papel-tijera/piedra-papel-tijera.component';
+import { CuatroImagenesComponent } from '../componentes/cuatro-imagenes/cuatro-imagenes.component';
 import { ListadoDeResultadosComponent } from '../componentes/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from '../componentes/login/login.component';
 import { ErrorComponent } from '../componentes/error/error.component';
@@ -39,10 +41,12 @@ const MiRuteo = [
 component: JuegosComponent ,
 children:
      [{path: '' , component: MenuCardComponent},
-     {path: 'Adivina' , component: AdivinaElNumeroComponent},
+      {path: 'Adivina' , component: AdivinaElNumeroComponent},
       {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
       {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
-      {path: 'Agilidad' , component: AgilidadAritmeticaComponent}]
+      {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
+      {path: 'Piedra', component: PiedraPapelTijeraComponent },
+      {path: 'Imagenes', component: CuatroImagenesComponent}]
 },
 {path: '**' , component: ErrorComponent},
 {path: 'error' , component: ErrorComponent}];
