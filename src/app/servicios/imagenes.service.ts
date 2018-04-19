@@ -24,8 +24,12 @@ export class ImagenesService {
         ]
     }
   ];
+
   getImagenes(nroImagen){
-    return this.imagenes[nroImagen]
+    return this.imagenes[nroImagen];
+  }
+  cantidadImagenes(){
+      return this.imagenes.length;
   }
 
 }
