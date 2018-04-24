@@ -1,7 +1,10 @@
+
+@import "../../../styles.css";
 .imagenDeMenu{
 width: 80px;
 height: 70px;
 }
+
 
 .hero-text {
     text-align: center;
@@ -11,3 +14,21 @@ height: 70px;
     transform: translate(-50%, -50%);
     color: #100000;
     }
+
+
+.card-columns .card {
+    display: flex;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+.example-card {
+  max-width: 400px;
+  color: white;
+  
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+

@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class QuienSoyComponent implements OnInit {
 
   constructor() { }
-
+  edad = (new Date()).getFullYear() - 1991;
+  
   ngOnInit() {
   }
 

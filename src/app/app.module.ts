@@ -27,8 +27,7 @@ import { RuteandoModule } from './ruteando/ruteando.module';
 import { ListadoComponent } from './componentes/listado/listado.component';
 
 
-import { MatGridListModule } from '@angular/material/grid-list';
-import {MatCardModule} from '@angular/material/card';
+
 // declaro donde quiero que se dirija
 /*
 const MiRuteo = [{path: 'error' , component: ErrorComponent},
@@ -60,6 +59,12 @@ import { SexoPipe } from './pipes/sexo.pipe';
 import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { CuatroImagenesComponent } from './componentes/cuatro-imagenes/cuatro-imagenes.component';
 import { ImagenesService }from './servicios/imagenes.service';
+
+//MATERIAL, ANGULAR
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+
+
 
 
 @NgModule({
@@ -104,6 +109,9 @@ import { ImagenesService }from './servicios/imagenes.service';
     // RouterModule.forRoot(MiRuteo)
     MatCardModule,
     MatGridListModule
+    
+    
+    
     
   ],
   providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService, ImagenesService],
