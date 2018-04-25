@@ -60,9 +60,6 @@ import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/pi
 import { CuatroImagenesComponent } from './componentes/cuatro-imagenes/cuatro-imagenes.component';
 import { ImagenesService }from './servicios/imagenes.service';
 
-//MATERIAL, ANGULAR
-import {MatCardModule} from '@angular/material/card';
-import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -104,11 +101,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     }),
-    // NgbModule.forRoot(MiRuteo),
+    // NgbModule.forRoot(MiRuteo)
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
-    MatCardModule,
-    MatGridListModule
     
     
     
