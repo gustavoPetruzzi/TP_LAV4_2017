@@ -32,3 +32,12 @@ height: 70px;
   background-size: cover;
 }
 
+.card {
+  background-color: firebrick;
+  text-align: center;
+  color: white
+}
+.card-footer, .card-deck {
+  background-color: black;
+}
+
