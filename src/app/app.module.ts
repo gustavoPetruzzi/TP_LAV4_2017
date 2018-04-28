@@ -60,6 +60,9 @@ import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/pi
 import { CuatroImagenesComponent } from './componentes/cuatro-imagenes/cuatro-imagenes.component';
 import { ImagenesService }from './servicios/imagenes.service';
 
+import {CardModule} from 'primeng/card';
+import {InputTextModule} from 'primeng/inputtext';
+
 
 
 
@@ -104,6 +107,9 @@ import { ImagenesService }from './servicios/imagenes.service';
     // NgbModule.forRoot(MiRuteo)
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
+    CardModule,
+    InputTextModule
+    
     
     
     

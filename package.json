@@ -30,7 +30,7 @@
     "jquery": "^3.3.1",
     "ngx-bootstrap": "^1.9.1",
     "popper": "^1.0.1",
-    "primeng": "^5.2.4",
+    "primeng": "^5.2.5",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },
