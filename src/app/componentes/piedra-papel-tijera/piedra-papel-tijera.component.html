@@ -19,22 +19,22 @@
             <th>Empatadas</th>
             <th>Perdidas</th>
           </tr>
-          <tr*ngFor="let jugada of jugadas">
-              <template [ngIf]="jugada == 'Gano'">
+          <tr *ngFor="let jugada of jugadas">
+              <ng-template [ngIf]="jugada == '1'">
                 <td> X </td>
                 <td> O </td>
                 <td> O </td>
-              </template>
-              <template [ngIf]="jugada == 'Perdio'">
+              </ng-template>
+              <ng-template [ngIf]="jugada == '2'">
                 <td> O </td>
                 <td> O </td>
                 <td> X </td>
-              </template>
-              <template [ngIf]="jugada == 'Empato'">
+              </ng-template>
+              <ng-template [ngIf]="jugada == '3'">
                 <td> O </td>
                 <td> X </td>
                 <td> O </td>
-              </template>
+              </ng-template>
           </tr>
         </table>
       </div>
