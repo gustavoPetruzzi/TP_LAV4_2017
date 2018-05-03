@@ -13,6 +13,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
   ganadas:number;
   perdidas:number;
   empatadas:number;
+  jugadas[]: Resultado = new array()
   //ocultarVerificar:boolean
   constructor() {
     this.nuevoJuego = new JuegoPiedraPapelTijera();
@@ -37,6 +38,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
     console.log(this.ganadas);
     console.log(this.empatadas);
     console.log(this.perdidas);
+    this.jugadas.push(this.nuevoJuego.resultado);
 
   }
 

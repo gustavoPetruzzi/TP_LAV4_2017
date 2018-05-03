@@ -4,12 +4,39 @@
     </h1>
     <div class="row">
       <div class="col-sm-4">
+        <img src="assets/imagenes/pierda.png" (click)="verificar(1)">
       </div>
       <div class="col-sm-4">
+        <img src="assets/imagenes/papel.png" (click) ="verificar(2)">
       </div>
       <div class="col-sm-4">
+        <img src="assets/imagenes/tijera.png">
       </div>
       <div class="col-sm-6">
+        <table>
+          <tr>
+            <th>Ganadas</th>
+            <th>Empatadas</th>
+            <th>Perdidas</th>
+          </tr>
+          <tr*ngFor="let jugada of jugadas">
+              <template [ngIf]="jugada == 'Gano'">
+                <td> X </td>
+                <td> O </td>
+                <td> O </td>
+              </template>
+              <template [ngIf]="jugada == 'Perdio'">
+                <td> O </td>
+                <td> O </td>
+                <td> X </td>
+              </template>
+              <template [ngIf]="jugada == 'Empato'">
+                <td> O </td>
+                <td> X </td>
+                <td> O </td>
+              </template>
+          </tr>
+        </table>
       </div>
     </div>
   <form name="juego">
