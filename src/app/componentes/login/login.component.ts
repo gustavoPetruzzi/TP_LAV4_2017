@@ -3,6 +3,10 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
+
+//FORM
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,30 +15,48 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
 export class LoginComponent implements OnInit {
 
   private subscription: Subscription;
+  //Logueo
   usuario = '';
   clave= '';
+  //Registro
+  nombre = '';
+  apellido = '';
+  email = '';
+  usuarioRegistro = '';
+  claveRegistro = '';
+
   progreso: number;
   progresoMensaje="esperando..."; 
   logeando=true;
   ProgresoDeAncho:string;
 
+  
+  
+
   clase="progress-bar progress-bar-info progress-bar-striped ";
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router) {
+    private router: Router,
+    
+  ) {
       this.progreso=0;
       this.ProgresoDeAncho="0%";
 
   }
 
+
   ngOnInit() {
+    
   }
 
   Entrar() {
     if (this.usuario === 'admin' && this.clave === 'admin') {
       this.router.navigate(['/Principal']);
     }
+  }
+  registrarse(){
+    console.log("Se registro");
   }
   MoverBarraDeProgreso() {
     

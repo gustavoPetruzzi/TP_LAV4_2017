@@ -3,23 +3,81 @@
 
 <div class="container-fluid" style="background:#000063;" >
   <div class="row">
-    <div class="col-md-3 offset-3">
-      <div class="card" style="width: 28rem; ">
-        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-        <div class="card-body">
-            <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-            <input type="text" pInputText placeholder="Username">         
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card" style="width: 28rem;">
-        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="col-md-4 offset-2 card">
+      <form (ngSubmit)="Entrar()" #loginForm="ngForm">
+        <h1 style="text-align: center"> Login </h1>
+        <div class="form-group">
+          
+          <input type="text" class="form-control" id="name"
+          required
+          pattern="[a-zA-Z][a-zA-Z ]+"
+          [(ngModel)]="usuario" name="name"
+          #name="ngModel" placeholder="Usuario">
+          <div [hidden]="name.valid || name.pristine"
+              class="alert alert-danger">
+              <div [hidden]="!name.hasError('required')">El usuario es requerido</div>
+              <div [hidden]="!name.hasError('pattern')">Se requiere mas de un caracter</div>
+          </div>
         </div>
-      </div>
+        <div class="form-group">
+          <input type="password" class="form-control" id="pass"
+          required
+          [(ngModel)]="clave" name="pass"
+          maxlength="8" 
+          #pass="ngModel" placeholder="Clave"> <!-- #pass y validator tienen que ser iguales -->
+          <div [hidden]="pass.valid || pass.pristine"
+              class="alert alert-danger">
+              <div [hidden]="!pass.hasError('minlength')">La clave es minimo de 8 caracteres</div>
+              <div [hidden]="!pass.hasError('required')">La clave es requerida</div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success btn-block" [disabled]="!loginForm.form.valid">Loguearse</button>
+      </form>
+    </div>
+    <div class="col-md-4 card">
+      <form (ngSubmit)="registrarse()" #registrarseForm="ngForm">
+        <h1 style="text-align: center"> Registrarse </h1>
+        
+        <div class="form-group">
+          <input type="text" class="form-control" id="nombre"
+          required
+          pattern="[a-zA-Z][a-zA-Z ]+"
+          [(ngModel)]="usuario" name="nombre"
+          #nombre="ngModel" placeholder="Nombre">
+          <div [hidden]="nombre.valid || nombre.pristine"
+              class="alert alert-danger">
+              <div [hidden]="!nombre.hasError('required')">El nombre es requerido</div>
+              <div [hidden]="!nombre.hasError('pattern')">Se requiere mas de un caracter</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" id="name"
+          required
+          pattern="[a-zA-Z][a-zA-Z ]+"
+          [(ngModel)]="usuario" name="name"
+          #name="ngModel" placeholder="Usuario">
+          <div [hidden]="name.valid || name.pristine"
+              class="alert alert-danger">
+              <div [hidden]="!name.hasError('required')">El usuario es requerido</div>
+              <div [hidden]="!name.hasError('pattern')">Se requiere mas de un caracter</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="mobilenumber"
+          required
+          [(ngModel)]="clave" name="mobilenumber"
+          maxlength="8" 
+          #mobile="ngModel" placeholder="Clave"> <!-- #mobile y validator tienen que ser iguales -->
+          <div [hidden]="mobile.valid || mobile.pristine"
+              class="alert alert-danger">
+              <div [hidden]="!mobile.hasError('minlength')">La clave es minimo de 8 caracteres</div>
+              <div [hidden]="!mobile.hasError('required')">La clave es requerida</div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success btn-block" [disabled]="!registrarseForm.form.valid">Registrarse</button>
+        </form>
+
     </div>
   </div>
 </div>

@@ -26,7 +26,8 @@ import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/
 import { RuteandoModule } from './ruteando/ruteando.module';
 import { ListadoComponent } from './componentes/listado/listado.component';
 
-
+// FORM
+import { ReactiveFormsModule } from '@angular/forms';  // <-- #1 import module
 
 // declaro donde quiero que se dirija
 /*
@@ -104,7 +105,7 @@ import { ImagenesService }from './servicios/imagenes.service';
     // NgbModule.forRoot(MiRuteo)
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
-
+    ReactiveFormsModule
     
     
     
