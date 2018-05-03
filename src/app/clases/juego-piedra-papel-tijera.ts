@@ -37,16 +37,19 @@ export class JuegoPiedraPapelTijera extends Juego {
                     console.info("perdiste");
                     console.info("tijera");
                     gano = false;
+                    this.resultado = Resultado.Perdio;
                 }
                 else if(this.eleccionPc == 2){
                     console.info("empate");
                     console.info("papel");
                     gano = false;
+                    this.resultado = Resultado.Empato
                 }
                 else{
                     console.info("ganaste");
                     console.info("piedra");
                     gano = true;
+                    this.resultado = Resultado.Gano;
                 }
                 break;
             case 3:
@@ -54,16 +57,19 @@ export class JuegoPiedraPapelTijera extends Juego {
                     console.info("perdiste");
                     console.info("piedra");
                     gano = false;
+                    this.resultado = Resultado.Perdio
                 }
                 else if(this.eleccionPc == 3){
                     console.info("empate");
                     console.info("tijera");
                     gano = false;
+                    this.resultado = Resultado.Empato
                 }
                 else{
                     console.info("Ganaste");
                     console.info("papel");
                     gano = true;
+                    this.resultado = Resultado.Gano;
                 }
                 break;
             default:
