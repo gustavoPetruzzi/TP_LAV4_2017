@@ -2,7 +2,7 @@
 <app-cabecera></app-cabecera>
 
 <div class="container-fluid" style="background:#000063;" >
-  <div class="row">
+  <div class="row" style="background:#000063;">
     <div class="col-md-4 offset-2 card">
       <form (ngSubmit)="Entrar()" #loginForm="ngForm">
         <h1 style="text-align: center"> Login </h1>
@@ -23,7 +23,7 @@
           <input type="password" class="form-control" id="pass"
           required
           [(ngModel)]="clave" name="pass"
-          maxlength="8" 
+          minlength="8" 
           #pass="ngModel" placeholder="Clave"> <!-- #pass y validator tienen que ser iguales -->
           <div [hidden]="pass.valid || pass.pristine"
               class="alert alert-danger">
@@ -39,42 +39,57 @@
         <h1 style="text-align: center"> Registrarse </h1>
         
         <div class="form-group">
-          <input type="text" class="form-control" id="nombre"
+          <input type="text" class="form-control" id="nameR"
           required
           pattern="[a-zA-Z][a-zA-Z ]+"
-          [(ngModel)]="usuario" name="nombre"
-          #nombre="ngModel" placeholder="Nombre">
-          <div [hidden]="nombre.valid || nombre.pristine"
+          [(ngModel)]="nombre" name="nameR"
+          #nameR="ngModel" placeholder="Nombre">
+          <div [hidden]="nameR.valid || nameR.pristine"
               class="alert alert-danger">
-              <div [hidden]="!nombre.hasError('required')">El nombre es requerido</div>
-              <div [hidden]="!nombre.hasError('pattern')">Se requiere mas de un caracter</div>
+              <div [hidden]="!nameR.hasError('required')">El nombre es requerido</div>
+              <div [hidden]="!nameR.hasError('pattern')">Se requiere mas de un caracter</div>
           </div>
         </div>
 
         <div class="form-group">
-          <input type="text" class="form-control" id="name"
+          <input type="text" class="form-control" id="surname"
           required
           pattern="[a-zA-Z][a-zA-Z ]+"
-          [(ngModel)]="usuario" name="name"
-          #name="ngModel" placeholder="Usuario">
-          <div [hidden]="name.valid || name.pristine"
+          [(ngModel)]="apellido" name="surname"
+          #surname="ngModel" placeholder="Apellido">
+          <div [hidden]="surname.valid || surname.pristine"
               class="alert alert-danger">
-              <div [hidden]="!name.hasError('required')">El usuario es requerido</div>
-              <div [hidden]="!name.hasError('pattern')">Se requiere mas de un caracter</div>
+              <div [hidden]="!surname.hasError('required')">El apellido es requerido</div>
+              <div [hidden]="!surname.hasError('pattern')">Se requiere mas de un caracter</div>
           </div>
         </div>
+
         <div class="form-group">
-          <input type="text" class="form-control" id="mobilenumber"
+          <input type="text" class="form-control" id="mail"
           required
-          [(ngModel)]="clave" name="mobilenumber"
-          maxlength="8" 
-          #mobile="ngModel" placeholder="Clave"> <!-- #mobile y validator tienen que ser iguales -->
-          <div [hidden]="mobile.valid || mobile.pristine"
+          [(ngModel)]="email" name="mail"
+          #mail="ngModel" placeholder="Clave"
+          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"> <!-- #mobile y validator tienen que ser iguales -->
+          <div [hidden]="mail.valid || mail.pristine"
               class="alert alert-danger">
-              <div [hidden]="!mobile.hasError('minlength')">La clave es minimo de 8 caracteres</div>
-              <div [hidden]="!mobile.hasError('required')">La clave es requerida</div>
+              <div [hidden]="!mail.hasError('pattern')"> Formato de mail invalido</div>
+              <div [hidden]="!mail.hasError('required')">El mail es requerido</div>
           </div>
         </div>
+<!-- Agregar 2 claves para validarse entre si -->
+        <div class="form-group">
+          <input type="password" class="form-control" id="passR"
+          required
+          [(ngModel)]="clave" name="passR"
+          minlength="8" 
+          #passR="ngModel" placeholder="Clave"> <!-- #passR y validator tienen que ser iguales -->
+          <div [hidden]="passR.valid || passR.pristine"
+              class="alert alert-danger">
+              <div [hidden]="!passR.hasError('minlength')">La clave es minimo de 8 caracteres</div>
+              <div [hidden]="!passR.hasError('required')">La clave es requerida</div>
+          </div>
+        </div>
+
         <button type="submit" class="btn btn-success btn-block" [disabled]="!registrarseForm.form.valid">Registrarse</button>
         </form>
 
