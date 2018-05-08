@@ -8,10 +8,10 @@ export class JuegoServiceService {
 
   peticion:any;
   constructor( public miHttp: MiHttpService ) {
-    this.peticion = this.miHttp.httpGetO("http://localhost:3003");
+    //this.peticion = this.miHttp.httpGetO("http://localhost:3003");
 //    this.peticion = this.miHttp.httpGetO("https://restcountries.eu/rest/v2/all");
   }
-
+  /*
   public listar(): Array<Juego> {
    this.miHttp.httpGetP("https://restcountries.eu/rest/v2/all")
     .then( data => {
@@ -40,6 +40,7 @@ export class JuegoServiceService {
     miArray.push(new JuegoAdivina("Juego 6", false));
     return miArray;
   }
+  */
 
   public listarPromesa(): Promise<Array<Juego>> {
     this.peticion

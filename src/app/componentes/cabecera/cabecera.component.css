@@ -1,6 +1,6 @@
 .panel
 {
-    height: 200px;
+    height: 250px;
     background-image: url("/assets/imagenes/cabecera.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -39,4 +39,7 @@ color: white;
 .btn-primary {
 	position: absolute;
 	
+}
+a{
+    color: white;
 }

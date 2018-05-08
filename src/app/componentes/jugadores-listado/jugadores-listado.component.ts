@@ -20,7 +20,7 @@ export class JugadoresListadoComponent implements OnInit {
   ngOnInit() {
   }
 
-
+  /*
   TraerTodos(){
     //alert("totos");
     this.miJugadoresServicio.traertodos('jugadores/','todos').then(data=>{
@@ -43,5 +43,6 @@ export class JugadoresListadoComponent implements OnInit {
 
     })
   }
+  */
 
 }

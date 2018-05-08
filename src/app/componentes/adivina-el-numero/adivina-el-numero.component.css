@@ -1,8 +1,15 @@
-
+h1,h2,h3{
+    color: white;
+    text-align: center;
+}
+body {
+    background-color: #000063;
+}
 form {
-    border: 10px solid #f1f1f1;
+    border: 10px solid aquamarine;
     padding: 10px;
-    background:gray;
+    
+    background:firebrick;
 }
 
 input[type=text], input[type=password] {

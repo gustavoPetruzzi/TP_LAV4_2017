@@ -1,31 +1,25 @@
 import { Injectable } from '@angular/core';
 import { MiHttpService } from './mi-http/mi-http.service'; 
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/toPromise';
+import { URLSearchParams } from '@angular/http';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Injectable()
 export class ArchivosJugadoresService {
-
-  api="http://localhost:8080/jugadoresarchivo/apirestjugadores/";
+  jugadores: any;
+  
   peticion:any;
-  constructor( public miHttp: MiHttpService ) {
+  constructor(  ) {
     
   }
 
-
   public   traerJugadores(ruta) {
-    return this.miHttp.httpGetO(this.api+ruta)
-    .toPromise()
-    .then( data => {
-      console.log("Archivo jugadores");
-     // console.log( data );
-      return data;
-    }, err => {
-      console.log( err );
-    })
- 
-
-  
+    
+    
   }
 
-
+  public altaJugador(ruta, jugador){
+  }
 
 }

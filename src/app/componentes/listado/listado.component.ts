@@ -18,11 +18,12 @@ export class ListadoComponent implements OnInit {
   ngOnInit() {
     
   }
-
+  /*
   llamaService(){
     console.log("llamaService");
     this.listadoParaCompartir= this.miServicioJuego.listar();
   }
+  */
 
   llamaServicePromesa(){
     console.log("llamaServicePromesa");

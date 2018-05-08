@@ -8,7 +8,7 @@ import { LoginComponent } from './componentes/login/login.component';
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from '@angular/http';
 
-// import { AccordionModule } from 'ngx-bootstrap';
+
 // agrego las clases para utilizar ruteo
 import { RouterModule, Routes } from '@angular/router';
 
@@ -26,9 +26,10 @@ import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/
 import { RuteandoModule } from './ruteando/ruteando.module';
 import { ListadoComponent } from './componentes/listado/listado.component';
 
-// FORM
-import { ReactiveFormsModule } from '@angular/forms';  // <-- #1 import module
-
+// animacion
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClientModule }    from '@angular/common/http';
 // declaro donde quiero que se dirija
 /*
 const MiRuteo = [{path: 'error' , component: ErrorComponent},
@@ -64,7 +65,6 @@ import { ImagenesService }from './servicios/imagenes.service';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,6 +93,7 @@ import { ImagenesService }from './servicios/imagenes.service';
     PiedraPapelTijeraComponent,
     CuatroImagenesComponent,
     
+    
   ],
   imports: [
     BrowserModule,
@@ -102,10 +103,14 @@ import { ImagenesService }from './servicios/imagenes.service';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     }),
+    HttpClientModule,
+    
+    
     // NgbModule.forRoot(MiRuteo)
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
-    ReactiveFormsModule
+    BrowserAnimationsModule
+    
     
     
     

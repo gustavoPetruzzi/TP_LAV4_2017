@@ -6,7 +6,8 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
 
 //FORM
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-
+import { ArchivosJugadoresService } from '../../servicios/archivos-jugadores.service';
+import { AngularFirestore } from 'angularfire2/firestore';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
   email = '';
   usuarioRegistro = '';
   claveRegistro = '';
-
+  algo;
   progreso: number;
   progresoMensaje="esperando..."; 
   logeando=true;
@@ -38,10 +39,13 @@ export class LoginComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private jugadores: ArchivosJugadoresService,
+    private db: AngularFirestore
     
   ) {
       this.progreso=0;
       this.ProgresoDeAncho="0%";
+      db.firestore.settings({ timestampsInSnapshots: true });
 
   }
 
@@ -55,8 +59,29 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/Principal']);
     }
   }
+  traerJugadores(){
+  }
   registrarse(){
-    console.log("Se registro");
+    let usuario = {
+      nombre: "juan",
+      apellido: "algo",
+      usuario:"user",
+      mail:"algo@algo.com",
+      password: '1111',
+    }
+    return this.db.collection('usuarios').add({
+      nombre:'gustavo', 
+      apellido:'petruzzi', 
+      usuario:'yustix',
+      email:'gustavopetruzzi19@gmail.com', 
+      password:'1161544661' })
+      .then(ref=>{
+        return ref.id
+      })
+      .catch(err =>{
+        return err;
+      })  
+      
   }
   MoverBarraDeProgreso() {
     

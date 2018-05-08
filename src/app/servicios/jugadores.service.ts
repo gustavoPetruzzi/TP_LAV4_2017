@@ -14,6 +14,7 @@ filtrado:any;
 
   traertodos(ruta : string,filtro: string) 
   {
+    /*
     return this.miHttp.traerJugadores(ruta).then(data=>{
       console.info("jugadores service",data);
 
@@ -32,7 +33,7 @@ filtrado:any;
       this.filtrado =this.filtrado.filter(
         data => data.gano === ganador  || filtro=="todos" ); return this.filtrado}
       )
-      .catch(errror=>{console.log("error")
+      .catch(error=>{console.log("error")
       
 
 
@@ -40,6 +41,7 @@ filtrado:any;
       
 
     });
+  */
   }
 
 }

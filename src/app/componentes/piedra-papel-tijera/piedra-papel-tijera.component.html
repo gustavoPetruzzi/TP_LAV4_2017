@@ -3,17 +3,17 @@
       {{nuevoJuego.nombre}}
     </h1>
     <div class="row">
-      <div class="col-sm-4">
-        <img src="assets/imagenes/pierda.png" (click)="verificar(1)">
+      <div class="col-sm-3">
+        <img src="assets/imagenes/pierda.png" class="img-responsive center-block" style="width: 100%" (click)="verificar(1)">
       </div>
-      <div class="col-sm-4">
-        <img src="assets/imagenes/papel.png" (click) ="verificar(2)">
+      <div class="col-sm-3">
+        <img src="assets/imagenes/papel.png"  class="img-responsive center-block" style="width: 100%" (click) ="verificar(2)">
       </div>
-      <div class="col-sm-4">
-        <img src="assets/imagenes/tijera.png " (click) ="verificar(3)" >
+      <div class="col-sm-3">
+        <img src="assets/imagenes/tijera.png " class="img-responsive center-block" style="width: 100%" (click) ="verificar(3)" >
       </div>
-      <div class="col-sm-6">
-        <table>
+      <div class="col-sm-3">
+        <table class="table">
           <tr>
             <th>Ganadas</th>
             <th>Empatadas</th>
@@ -27,23 +27,16 @@
               </ng-template>
               <ng-template [ngIf]="jugada == '2'">
                 <td> O </td>
+                <td> X</td>
                 <td> O </td>
-                <td> X </td>
               </ng-template>
               <ng-template [ngIf]="jugada == '3'">
                 <td> O </td>
-                <td> X </td>
                 <td> O </td>
+                <td> X </td>
               </ng-template>
           </tr>
         </table>
       </div>
     </div>
-  <form name="juego">
-    <button (click)="verificar(1)"> Piedra  </button>
-    <br>
-    <button (click)="verificar(2)"> Papel  </button>
-    <br>
-    <button (click)="verificar(3)"> Tijera  </button>
-  </form>
 </div>
